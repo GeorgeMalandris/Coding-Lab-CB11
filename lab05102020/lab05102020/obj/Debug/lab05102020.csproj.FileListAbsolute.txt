@@ -1,0 +1,7 @@
+C:\Users\georg\Desktop\CODING BOOTCAMP\CODING_LAB\lab05102020\lab05102020\obj\Debug\lab05102020.csprojAssemblyReference.cache
+C:\Users\georg\Desktop\CODING BOOTCAMP\CODING_LAB\lab05102020\lab05102020\obj\Debug\lab05102020.csproj.CoreCompileInputs.cache
+C:\Users\georg\Desktop\CODING BOOTCAMP\CODING_LAB\lab05102020\lab05102020\bin\Debug\lab05102020.exe.config
+C:\Users\georg\Desktop\CODING BOOTCAMP\CODING_LAB\lab05102020\lab05102020\bin\Debug\lab05102020.exe
+C:\Users\georg\Desktop\CODING BOOTCAMP\CODING_LAB\lab05102020\lab05102020\bin\Debug\lab05102020.pdb
+C:\Users\georg\Desktop\CODING BOOTCAMP\CODING_LAB\lab05102020\lab05102020\obj\Debug\lab05102020.exe
+C:\Users\georg\Desktop\CODING BOOTCAMP\CODING_LAB\lab05102020\lab05102020\obj\Debug\lab05102020.pdb
