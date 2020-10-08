@@ -57,13 +57,13 @@ namespace lab05102020
             Console.WriteLine("Please give the Last Name of the student. (two letters min)");
             string Lastname = checker.ValidString(namePattern);
             Console.WriteLine("Please give the Age of the student.");
-            int age = checker.intInput(3);
+            int age = checker.intInput(3,120);
             Console.WriteLine("Please give the Height of the student.");
             double height = checker.doubleInput(0,2.5);
             Console.WriteLine("Please give the Tuition of the student.");
             double tuition = checker.doubleInput(0, 100000);
             Console.WriteLine("Please give the Date the student starts school. (dd/mm/yyyy)");
-            DateTime startDate = checker.validDateTimeInput();
+            DateTime startDate = checker.validDateTimeInput(new DateTime(2000,01,01),new DateTime(2040,01,01));
             Console.WriteLine("Please give the Phone of the student.");
             Regex phonePattern = new Regex(@"^[0-9]{10}$");
             string phone = checker.ValidString(phonePattern);
@@ -107,32 +107,73 @@ namespace lab05102020
             } while (flag);
             return input;
         }
-        public DateTime validDateTimeInput()
+        public DateTime validDateTimeInput(DateTime? minDate = null, DateTime? maxDate = null)
         {
-            DateTime dt;
-            while (!DateTime.TryParse(Console.ReadLine(), out dt))
+            if (minDate == null)
+                minDate = DateTime.MinValue;
+            if (maxDate == null)
+                maxDate = DateTime.MaxValue;
+
+            string userInput;
+            bool isValidInput;
+            DateTime returnDate;
+            bool flag = true;
+            do
             {
-                Console.WriteLine("Please give a valid Date.");
-            }
-            return dt;
+                userInput = Console.ReadLine();
+                isValidInput = DateTime.TryParse(userInput, out returnDate);
+                if (!isValidInput)
+                    Console.WriteLine("Please give a valid Date.");
+                else if (returnDate < minDate)
+                    Console.WriteLine("Please give a Date bigger than {0}", minDate);
+                else if (returnDate > maxDate)
+                    Console.WriteLine("Please give a Date smaller than {0}", maxDate);
+                else
+                    flag = false;
+            } while (flag);
+            return returnDate;
         }
-        public int intInput(int minValue)
+        public int intInput(int minValue = Int32.MinValue, int maxValue = Int32.MaxValue)
         {
-            int input;
-            while (!int.TryParse(Console.ReadLine(), out input) || input < minValue)
+            string userInput;
+            bool isValidInput;
+            int returnNumber;
+            bool flag = true;
+            do
             {
-                Console.WriteLine("Please give an integer bigger than {0}.", minValue);
-            }
-            return input;
+                userInput = Console.ReadLine();
+                isValidInput = int.TryParse(userInput, out returnNumber);
+                if (!isValidInput)
+                    Console.WriteLine("Please give a valid value");
+                else if (returnNumber < minValue)
+                    Console.WriteLine("Please give a number bigger than {0}", minValue);
+                else if (returnNumber > maxValue)
+                    Console.WriteLine("Please give a number smaller than {0}", maxValue);
+                else
+                    flag = false;
+            } while (flag);
+            return returnNumber;
         }
-        public double doubleInput(double minValue, double maxValue)
+        public double doubleInput(double minValue = Double.MinValue, double maxValue = Double.MaxValue)
         {
-            double input;
-            while (!double.TryParse(Console.ReadLine(), out input) || input < minValue || input > maxValue)
+            string userInput;
+            bool isValidInput;
+            double returnNumber;
+            bool flag = true;
+            do
             {
-                Console.WriteLine("Please give a number between {0} and {1}.", minValue, maxValue);
-            }
-            return input;
+                userInput = Console.ReadLine();
+                isValidInput = double.TryParse(userInput, out returnNumber);
+                if (!isValidInput)
+                    Console.WriteLine("Please give a valid value");
+                else if (returnNumber < minValue)
+                    Console.WriteLine("Please give a number bigger than {0}", minValue);
+                else if (returnNumber > maxValue)
+                    Console.WriteLine("Please give a number smaller than {0}", maxValue);
+                else
+                    flag = false;
+            } while (flag);
+            return returnNumber;
         }
         public bool yesInput()
         {
@@ -143,8 +184,9 @@ namespace lab05102020
             } while (!answer.Equals("y", StringComparison.OrdinalIgnoreCase) && !answer.Equals("n", StringComparison.OrdinalIgnoreCase));
             return answer.Equals("y", StringComparison.OrdinalIgnoreCase) ? true : false;
         }
-
     }
+
+}
 
     class Student
     {
