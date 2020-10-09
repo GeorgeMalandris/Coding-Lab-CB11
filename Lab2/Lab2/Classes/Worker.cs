@@ -9,8 +9,8 @@ namespace Lab2.Classes
     class Worker
     {
         //public int id { get; set; }
-        string firstname;
-        public string Firstname
+        private string firstname;
+        private string Firstname
         {
             get
             {
@@ -31,8 +31,8 @@ namespace Lab2.Classes
                 }
             }
         }
-        string lastname;
-        public string Lastname
+        private string lastname;
+        private string Lastname
         {
             get
             {
@@ -53,8 +53,8 @@ namespace Lab2.Classes
                 }
             }
         }
-        decimal weekSalary;
-        public decimal WeekSalary
+        private decimal weekSalary;
+        private decimal WeekSalary
         {
             get
             {
@@ -72,8 +72,8 @@ namespace Lab2.Classes
                 }
             }
         }
-        int workHoursPerDay;
-        public int WorkHoursPerDay
+        private int workHoursPerDay;
+        private int WorkHoursPerDay
         {
             get
             {
@@ -91,7 +91,7 @@ namespace Lab2.Classes
                 }
             }
         }
-        public decimal SalaryPerHour
+        private decimal SalaryPerHour
         {
             get
             {
@@ -102,8 +102,9 @@ namespace Lab2.Classes
                 return salaryPerHour;
             }
         }
+        private Gender Gender { get; set; }
 
-        public Worker(/*int id,*/ string firstname, string lastname, decimal weekSalary, int workHoursPerDay)
+        public Worker(/*int id,*/ string firstname, string lastname, decimal weekSalary, int workHoursPerDay, Gender gender)
         {
             if (string.IsNullOrEmpty(firstname) || string.IsNullOrEmpty(lastname))
             {
@@ -115,11 +116,20 @@ namespace Lab2.Classes
             this.Lastname = lastname;
             this.WeekSalary = weekSalary;
             this.WorkHoursPerDay = workHoursPerDay;
+            this.Gender = gender;
         }
 
         public void print()
         {
-            Console.WriteLine("\nWorker's Details\n-------------------\nFirst Name: {0}\nLast Name: {1}\nWeek Salary: {2:N2}\nHours Per Day: {3}\nSalary Per Hour: {4:N2}\n", Firstname, Lastname, WeekSalary, WorkHoursPerDay, SalaryPerHour);
+            Console.WriteLine("\nWorker's Details\n-------------------\nFirst Name: {0}\nLast Name: {1}\nWeek Salary: {2:N2}\nHours Per Day: {3}\nSalary Per Hour: {4:N2}\nGender: {5}", Firstname, Lastname, WeekSalary, WorkHoursPerDay, SalaryPerHour, Gender);
+        }
+        public string getName()
+        {
+            return firstname;
+        }
+        public string getLastname()
+        {
+            return lastname;
         }
     }
 }

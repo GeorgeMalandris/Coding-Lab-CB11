@@ -5,14 +5,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Text.RegularExpressions;
 using System.Collections.Concurrent;
+using System.IO;
+using System.Runtime.Remoting;
 
 namespace Lab2.Classes
 {
     class Student
     {
         //public int id { get; set; }
-        string firstname;
-        public string Firstname
+        private string firstname;
+        private string Firstname
         {
             get
             {
@@ -33,8 +35,8 @@ namespace Lab2.Classes
                 }
             }
         }
-        string lastname;
-        public string Lastname
+        private string lastname;
+        private string Lastname
         {
             get
             {
@@ -55,8 +57,8 @@ namespace Lab2.Classes
                 }
             }
         }
-        string facultyNumber;
-        public string FacultyNumber
+        private string facultyNumber;
+        private string FacultyNumber
         {
             get
             {
@@ -76,8 +78,9 @@ namespace Lab2.Classes
                 }
             }
         }
+        private Gender Gender { get; set; }
 
-        public Student(/*int id,*/ string firstname, string lastname, string facultyNumber)
+        public Student(/*int id,*/ string firstname, string lastname, string facultyNumber, Gender gender)
         {
             if (string.IsNullOrEmpty(firstname) || string.IsNullOrEmpty(lastname))
             {
@@ -88,11 +91,20 @@ namespace Lab2.Classes
             this.Firstname = firstname;
             this.Lastname = lastname;
             this.FacultyNumber = facultyNumber;
+            this.Gender = gender;
         }
 
         public void print()
         {
-            Console.WriteLine("\nStudent's Details\n-------------------\nFirst Name: {0}\nLast Name: {1}\nFaculty Number: {2}\n", Firstname, Lastname, FacultyNumber);
+            Console.WriteLine("\nStudent's Details\n-------------------\nFirst Name: {0}\nLast Name: {1}\nFaculty Number: {2}\nGender: {3}", Firstname, Lastname, FacultyNumber,Gender);
+        }
+        public string getName()
+        {
+            return firstname;
+        }
+        public string getLastname()
+        {
+            return lastname;
         }
     }
 }
