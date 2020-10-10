@@ -37,11 +37,11 @@ namespace Lab2
         {
             InputChecker checker = new InputChecker();
             Regex namePattern = new Regex(@"^[^0-9\W]{3,}$");
-            Console.WriteLine("Please give the Name of the student. (two letters min)");
+            Console.WriteLine("Please give the Name of the student. (more than 2 characters)");
             string name = checker.ValidString(namePattern);
 
             Regex lastNamePattern = new Regex(@"^[^0-9\W]{4,}$");
-            Console.WriteLine("Please give the Last Name of the student. (three letters min)");
+            Console.WriteLine("Please give the Last Name of the student. (more than 3 characters)");
             string Lastname = checker.ValidString(lastNamePattern);
 
             Console.WriteLine("Please give the Faculty Number of the student.");
