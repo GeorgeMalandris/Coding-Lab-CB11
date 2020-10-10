@@ -27,7 +27,7 @@ namespace Lab2.Classes
                 }
                 else
                 {
-                    Console.WriteLine("More than 2 characters");
+                    Console.WriteLine("First Name must be more than 2 characters");
                 }
             }
         }
@@ -49,7 +49,7 @@ namespace Lab2.Classes
                 }
                 else
                 {
-                    Console.WriteLine("More than 3 characters");
+                    Console.WriteLine("Last Name must be more than 3 characters");
                 }
             }
         }
@@ -68,7 +68,7 @@ namespace Lab2.Classes
                 }
                 else
                 {
-                    Console.WriteLine("More than 10");
+                    Console.WriteLine("Week Salary must be more than 10");
                 }
             }
         }
@@ -87,7 +87,7 @@ namespace Lab2.Classes
                 }
                 else
                 {
-                    Console.WriteLine("More than 1 less than 12");
+                    Console.WriteLine("Work hours per day must be between 1 and 12");
                 }
             }
         }

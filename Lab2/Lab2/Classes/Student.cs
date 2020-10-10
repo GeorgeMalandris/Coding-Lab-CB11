@@ -31,7 +31,7 @@ namespace Lab2.Classes
                 }
                 else
                 {
-                    Console.WriteLine("More than 2 characters");
+                    Console.WriteLine("First Name must be more than 2 characters");
                 }
             }
         }
@@ -53,7 +53,7 @@ namespace Lab2.Classes
                 }
                 else
                 {
-                    Console.WriteLine("More than 3 characters");
+                    Console.WriteLine("Last Name must be more than 3 characters");
                 }
             }
         }

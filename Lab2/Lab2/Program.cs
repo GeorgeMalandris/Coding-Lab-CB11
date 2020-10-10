@@ -12,10 +12,25 @@ namespace Lab2
     {
         static void Main(string[] args)
         {
-            //Brainy.Init();
+            Brainy br = new Brainy();
+            br.Init();
+            int number = br.NumberOfWorkers();
+
+            br.CreateStudent();
+            br.CreateWorker();
+
+            foreach (var item in br.GetStudents())
+            {
+                item.print();
+            }
+
+            foreach (var item in br.GetWorkers())
+            {
+                item.print();
+            }
 
 
-            
+
         }
     }
 }
