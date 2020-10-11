@@ -101,7 +101,7 @@ namespace Lab2
         {
             Student st1 = new Student("George", "Malandris", "4dd4d", Gender.Male);
             Student st2 = new Student("Panagiotis", "varamentis", "4dd4d46", Gender.Male);
-            Student st3 = new Student("stavros", "", "4dd4d45", Gender.Male);
+            Student st3 = new Student("Stavros", "Vasileiadis", "4dd4d45", Gender.Male);
             Student st4 = new Student("Aggeliki", "Papantoniou", "d455a55555a", Gender.Female);
 
             List<Student> syntheticStudents = new List<Student> { st1, st2, st3, st4 };
@@ -114,7 +114,7 @@ namespace Lab2
 
             Worker w1 = new Worker("George", "Malandris", 50, 8, Gender.Male);
             Worker w2 = new Worker("Panagiotis", "varamentis", 150, 30, Gender.Male);
-            Worker w3 = new Worker("stavros", "", 1, 8, Gender.Male);
+            Worker w3 = new Worker("stavros", "Vasileiadis", 25, 3, Gender.Male);
             Worker w4 = new Worker("Aggeliki", "Papantoniou", 100, 0, Gender.Female);
 
             List<Worker> syntheticWorkers = new List<Worker> { w1, w2, w3, w4 };

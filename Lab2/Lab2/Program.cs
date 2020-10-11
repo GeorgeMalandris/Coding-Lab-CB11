@@ -22,7 +22,6 @@ namespace Lab2
                 Console.Clear();
                 exitFlag = menu(br);
             } while (!exitFlag.Equals("exit"));
-            
         }
         public static string menu(Brainy br)
         {
