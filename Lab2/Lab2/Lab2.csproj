@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="Brainy.cs" />
     <Compile Include="Classes\Gender.cs" />
+    <Compile Include="Classes\Helper.cs" />
     <Compile Include="Classes\Student.cs" />
     <Compile Include="Classes\Worker.cs" />
     <Compile Include="Program.cs" />
